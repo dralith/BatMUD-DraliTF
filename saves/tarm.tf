@@ -1,0 +1,9 @@
+/set resses 0
+/set raises 0
+/set bodyes 0
+/set ressxp 0
+/set raisxp 0
+/set bodyxp 0
+/set reincxp 0
+/set reincs 0
+/set totxpgain 0

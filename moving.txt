@@ -1,0 +1,10 @@
+/set demon1=zov-zovbaktymuusumupicxorbi
+/set demon2=
+/set demon3=
+/set curdemon=%demon1
+
+;; Commands: (also viewable via /help init)
+;;   Command <arguments>      - Description
+;;   /setup                   - set the clients settings based on your choices
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+

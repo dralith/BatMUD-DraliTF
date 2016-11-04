@@ -1,0 +1,21 @@
+; tfrc
+; startup definition file
+; general
+/set isize=2
+/visual on
+/redef on
+/set TERM xterm
+
+;Whether or not to log your sessions, defaults to on(1);
+/set LOGGING=1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;           SET THESE OR A LOT OF STUFF WILL NOT WORK PROPERLY!             ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Directory where your DraliTF files are.
+/set TF_DIR=/home/dralith/DraliTF
+;; Your character name:
+/set MY_NAME=dralith
+
+
+/eval /load %{TF_DIR}/init.tf
