@@ -39,7 +39,7 @@
 	    	/d_pass Casting Rounds [ on]%; \
 	    /endif%; \
 	/else \
-		/if (%{-1} =~ "on")
+		/if (%{-1} =~ "on") \
 	    	/set rounds=1%; \
 	    	/d_pass Casting Rounds [ on]%; \
 	    /else \
@@ -53,11 +53,18 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 /def CASTER_reportrounds = \
 	/if (%{rounds}) \
-		/party_report _general %{Spell} in %{Blastrounds}%; \
+	  /if ($[%{Blastrounds} / 2] != $[%{Blastrounds} / 2.0]) \
+		  /party_report _general '%{Spell}' in %{Blastrounds}%; \
+		/endif%; \
 	/endif
 
-/def -p1 -mregexp -t'*: (#*)' CASTER_epc = \
-	/set Blastrounds=strlen(%{P1})%; \
+/def -p1 -mregexp -t'([A-z ]+): ([#]+)' CASTER_epc = \
+	/set Spell=%{P1}%; \
+	/set Blastrounds=$[strlen(%{P2})]%; \
+	/CASTER_reportrounds
+
+/def -p1 -F -t'You feel unearthly power hasten your casting.' CASTER_qlips = \
+	/set Blastrounds=$[{Blastrounds}-1]%; \
 	/CASTER_reportrounds
 
 /def -p1 -F -t'You skillfully cast the spell with haste.' CASTER_haste1 = \
